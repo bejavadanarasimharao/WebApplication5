@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebApplication5.Models.Product>
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1>ProductDetails</h1>
+
+<table>
+    <tr>
+        <th style="padding:8px;">
+            ProductId
+        </th>
+        <th style="padding:8px ;">
+            ProductName
+        </th>
+        <th style="padding:8px ;">
+            ProductDescription
+        </th>
+        <th>
+            CurrentPrice
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+      
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CurrentPrice)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditProductDetails", new { ProductId = item.ProductId })
+        @Html.ActionLink("Delete", "DeleteProductDetails", new { ProductId = item.ProductId })
+    </td>
+</tr>
+
+
+
+    }
+
+</table>

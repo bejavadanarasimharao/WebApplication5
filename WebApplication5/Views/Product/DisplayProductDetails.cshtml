@@ -1,0 +1,32 @@
+﻿@model WebApplication5.Models.Product
+@{
+    ViewBag.Title = "DisplayProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using (Html.BeginForm("DisplayProduct", "Product", FormMethod.Post))
+{ 
+   <br />
+   <br />
+    @Html.Label("Enter ProductId:")
+    @Html.TextBoxFor(m => m.ProductId)
+    @Html.ValidationMessageFor(m => m.ProductId)
+    <br />
+    <br />
+    @Html.Label("Enter ProductName:")
+    @Html.TextBoxFor(m => m.ProductName)
+    @Html.ValidationMessageFor(m => m.ProductName)
+    <br />
+    <br />
+    @Html.Label("Enter ProductDescription:")
+    @Html.TextBoxFor(m => m.ProductDescription)
+    @Html.ValidationMessageFor(m => m.ProductDescription)
+    <br />
+    <br />
+    @Html.Label("Enter CurrentPrice:")
+    @Html.TextBoxFor(m => m.CurrentPrice)
+    @Html.ValidationMessageFor(m => m.CurrentPrice)
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+}
